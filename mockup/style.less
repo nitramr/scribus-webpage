@@ -28,7 +28,7 @@
 @gray-lighter : #f0f0f0;
 @brand-primary : rgb(48, 100, 160);
 @brand-success : #5cb85c;
-@brand-info : rgb(70, 157, 202);
+@brand-info : rgb(42, 174, 233);
 @brand-warning : #f0ad4e;
 @brand-danger : #d9534f;
 @black-transparent : rgba(0, 0, 0, 0.3);
@@ -78,7 +78,7 @@ monospace;
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 @line-height-computed : floor((@font-size-base * @line-height-base)); // ~20px
 //** By default, this inherits from the `<body>`.
-@headings-font-family : "Noto Sans";
+@headings-font-family : "Roboto";
 @headings-font-weight : 300;
 @headings-line-height : 1.1;
 @headings-color : inherit;
@@ -306,9 +306,9 @@ monospace;
 @navbar-default-border : darken(@navbar-default-bg, 6.5%);
 // Navbar links
 @navbar-default-link-color : contrast(@navbar-default-bg, @text-color, @text-inverse, 43%);
-@navbar-default-link-hover-color : @navbar-default-color;
+@navbar-default-link-hover-color : @brand-info;
 @navbar-default-link-hover-bg : transparent;
-@navbar-default-link-active-color : @navbar-default-color;
+@navbar-default-link-active-color : @navbar-default-link-hover-color;
 @navbar-default-link-active-bg : darken(@navbar-default-bg, 6.5%);
 @navbar-default-link-disabled-color : #ccc;
 @navbar-default-link-disabled-bg : transparent;
@@ -327,7 +327,7 @@ monospace;
 @navbar-inverse-border : darken(@navbar-inverse-bg, 10%);
 // Inverted navbar links
 @navbar-inverse-link-color : lighten(@gray-light, 15%);
-@navbar-inverse-link-hover-color : #fff;
+@navbar-inverse-link-hover-color : @brand-info;
 @navbar-inverse-link-hover-bg : transparent;
 @navbar-inverse-link-active-color : @navbar-inverse-link-hover-color;
 @navbar-inverse-link-active-bg : darken(@navbar-inverse-bg, 10%);
@@ -734,37 +734,8 @@ monospace;
 @import "https://raw.githubusercontent.com/twbs/bootstrap/v3.3.4/less/utilities.less";
 @import "https://raw.githubusercontent.com/twbs/bootstrap/v3.3.4/less/responsive-utilities.less";
 @import "https://raw.githubusercontent.com/Pingendo/pingendo-bootstrap/gh-pages/less/pingendo-custom.less";
-//-- Custom Styles
-//-- Container
-section.page-header__main {
-  position: relative;
-  background-color: black;
-  height: 560px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.page-header__main-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-}
-
-.page-header__main-title {
-  position: relative;
-  margin-bottom: 100px;
-}
-
+//== Custom Styles
+//== Container
 // featured box
 .featured {
   height: 480px;
@@ -831,7 +802,7 @@ section.page-header__main {
   color: @brand-info;
 }
 
-//-- typography & background
+//== typography & background
 a {
   text-decoration: none;
 }
@@ -852,11 +823,24 @@ a {
   background-color: @brand-info;
 }
 
+.background-pattern {
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-position: left top;
+  background-repeat: repeat, no-repeat;
+  &.background-image-fixed {
+    background-attachment: fixed;
+  }
+}
+
 .text-shadow {
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
-//-- spacer elements
+//== spacer elements
 .mg-tp-50 {
   margin-top: 50px;
 }
@@ -869,11 +853,15 @@ a {
   padding-bottom: 80px;
 }
 
+.pd-tp-20 {
+  padding-top: 20px;
+}
+
 .pd-tp-80 {
   padding-top: 80px;
 }
 
-//-- Navigation bar
+//== Navigation bar
 .navbar-brand {
   padding: 8px;
 }
