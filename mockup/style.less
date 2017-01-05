@@ -21,17 +21,21 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 @gray-base : #343539;
-@gray-darker : #97979c;
-@gray-dark : #72737b;
-@gray : #dfdfdf;
+@gray-darker : #72737b;
+@gray-dark : #97979c;
+@gray : #aaaaab;
 @gray-light : #e8e8ea;
 @gray-lighter : #f0f0f0;
 @brand-primary : rgb(48, 100, 160);
 @brand-success : #5cb85c;
-@brand-info : rgb(42, 174, 233);
+@brand-info : rgb(40, 166, 222);
 @brand-warning : #f0ad4e;
 @brand-danger : #d9534f;
 @black-transparent : rgba(0, 0, 0, 0.3);
+@scribus-darker : rgb(5, 25, 32);
+@scribus-dark : @brand-primary;
+@scribus-light : @brand-info;
+@scribus-lighter : rgb(193, 227, 242);
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -40,7 +44,7 @@
 //** Global text color on `<body>`.
 @text-color : @gray-base;
 //** Global textual link color.
-@link-color : @brand-info;
+@link-color : @scribus-light;
 //** Link hover color set via `darken()` function.
 @link-hover-color : @gray-base;
 //** Link hover decoration.
@@ -323,7 +327,7 @@ monospace;
 // Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color : lighten(@gray-light, 15%);
-@navbar-inverse-bg : #222;
+@navbar-inverse-bg : @scribus-darker;
 @navbar-inverse-border : darken(@navbar-inverse-bg, 10%);
 // Inverted navbar links
 @navbar-inverse-link-color : lighten(@gray-light, 15%);
@@ -667,7 +671,7 @@ monospace;
 //** Horizontal offset for forms and lists.
 @component-offset-horizontal : 180px;
 //** Text muted color
-@text-muted : @gray-light;
+@text-muted : @gray;
 //** Abbreviations and acronyms border color
 @abbr-border-color : @gray-light;
 //** Headings small color
@@ -782,27 +786,28 @@ monospace;
 
 // footer
 #footer-navigation {
+  background: @scribus-darker;
   padding: 15px 0;
   font-size: 85%;
   color: @gray-dark;
-  border-top: thick solid @gray-light;
+  border-top: thick solid @scribus-dark;
 }
 
 #footer-navigation p {
   text-align: center;
   font-size: .9em;
-  color: @gray-dark;
+  color: @gray-darker;
 }
 
 #footer-navigation a {
-  color: @gray-dark;
+  color: @gray;
 }
 
 #footer-navigation a:hover {
-  color: @brand-info;
+  color: @scribus-light;
 }
 
-//== typography & background
+//== typography
 a {
   text-decoration: none;
 }
@@ -811,6 +816,11 @@ a {
   color: #fff!important;
 }
 
+.text-gray-light {
+  color: @gray-light;
+}
+
+//== background
 .bg-gray-lighter {
   background-color: @gray-lighter;
 }
@@ -821,6 +831,10 @@ a {
 
 .bg-blue1 {
   background-color: @brand-info;
+}
+
+.bg-gray-base {
+  background-color: @gray-base;
 }
 
 .background-pattern {
@@ -836,8 +850,14 @@ a {
   }
 }
 
+// == effects
 .text-shadow {
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+.img-shadow {
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
 }
 
 //== spacer elements
