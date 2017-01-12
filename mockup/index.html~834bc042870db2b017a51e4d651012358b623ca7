@@ -31,11 +31,7 @@
               <a href="download.html">Download</a>
             </li>
             <li>
-<<<<<<< HEAD:mockup/index.html
               <a href="learn.html">Learn<br></a>
-=======
-              <a href="learn.html">Support</a>
->>>>>>> 834bc042870db2b017a51e4d651012358b623ca7:mockup/homepage-template.html
             </li>
             <li>
               <a href="news.html">News</a>
@@ -259,10 +255,6 @@
             <h4>Scribus</h4>
             <ol class="list-unstyled">
               <a href="download.html"><li>Download</li></a>
-<<<<<<< HEAD:mockup/index.html
-              <a href="showcase.html"><li>Showcase</li></a>
-=======
->>>>>>> 834bc042870db2b017a51e4d651012358b623ca7:mockup/homepage-template.html
               <a href="features.html"><li>Features</li></a>
               <a href="learn.html"><li>Learn</li></a>
             </ol>
@@ -270,16 +262,14 @@
           <div class="col-sm-3">
             <h4>Get Involved</h4>
             <ol class="list-unstyled">
-              <a href="#"><li>Developer</li></a>
-              <a href="#"><li>Designer</li></a>
-              <a href="#"><li>Writer</li></a>
+              <a href="#"><li>Development</li></a>
+              <a href="#"><li>Contributor</li></a>
               <a href="#"><li>Donations</li></a>
             </ol>
           </div>
           <div class="col-sm-3">
             <h4>Scribus.net</h4>
             <ol class="list-unstyled">
-              <a href="#"><li>News</li></a>
               <a href="#"><li>Contact</li></a>
               <a href="#"><li>About</li></a>
               <a href="#"><li>Login</li></a>
@@ -288,10 +278,17 @@
           <div class="col-sm-3">
             <h4>Follow</h4>
             <div class="row">
-              <div class="col-md-12 text-left">
-                <a href="https://plus.google.com/109612024486187515483"><i class="fa fa-2x fa-fw fa-google-plus"></i></a>
-                <a href="https://twitter.com/scribus"><i class="fa fa-2x fa-fw fa-twitter"></i></a>
-                <a href="https://github.com/scribusproject/scribus"><i class="fa fa-2x fa-fw fa-github"></i></a>
+              <div class="col-md-12 hidden-lg hidden-md hidden-sm">
+                <a href="#"><i class="fa fa-3x fa-fw fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-github"></i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 hidden-xs text-left">
+                <a href="#"><i class="fa fa-2x fa-fw fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-2x fa-fw fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-2x fa-fw fa-github"></i></a>
               </div>
             </div>
           </div>
