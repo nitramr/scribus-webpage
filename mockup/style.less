@@ -32,10 +32,10 @@
 @brand-warning : #f0ad4e;
 @brand-danger : #d9534f;
 @black-transparent : rgba(0, 0, 0, 0.3);
-@scribus-darker : rgb(5, 25, 32);
-@scribus-dark : @brand-primary;
 @scribus-light : @brand-info;
 @scribus-lighter : rgb(193, 227, 242);
+@scribus-dark : @brand-primary;
+@scribus-darker : rgb(5, 25, 32);
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -743,17 +743,17 @@ monospace;
 //== Container
 // footer
 #footer-navigation {
-  background: @scribus-darker;
+  background: darken(@scribus-light, 40%);
   padding: 15px 0;
   font-size: 85%;
-  color: @gray-dark;
+  color: @gray;
   border-top: thick solid @scribus-light;
 }
 
 #footer-navigation p {
   text-align: center;
   font-size: .9em;
-  color: @gray-darker;
+  color: @gray-dark;
 }
 
 #footer-navigation a {

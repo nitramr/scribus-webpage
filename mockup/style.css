@@ -6777,16 +6777,16 @@ body {
   background-attachment: fixed;
 }
 #footer-navigation {
-  background: #051920;
+  background: #082532;
   padding: 15px 0;
   font-size: 85%;
-  color: #97979c;
+  color: #aaaaab;
   border-top: thick solid #28a6de;
 }
 #footer-navigation p {
   text-align: center;
   font-size: .9em;
-  color: #72737b;
+  color: #97979c;
 }
 #footer-navigation a {
   color: #aaaaab;
