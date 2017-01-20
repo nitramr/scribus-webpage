@@ -738,7 +738,12 @@ monospace;
 @import "https://raw.githubusercontent.com/Pingendo/pingendo-bootstrap/gh-pages/less/pingendo-custom.less";
 //== Custom Styles
 // Pingendo variables
-@section-spacing : 64px;
+@section-spacing : 48px;
+.media {
+  // Proper spacing between instances of .media
+  padding-bottom: 16px;
+}
+
 @import url('https://fonts.googleapis.com/css?family=@{headings-font-family}:@{headings-font-weight}|@{font-family-base}:@{font-family-weight}');
 //== Container
 // footer
@@ -865,4 +870,50 @@ span.navbar-label {
 .card:hover {
   transition: 0.2s;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+}
+
+//== dlm card
+.dlm {
+  padding: @padding-base-horizontal;
+  color: #fff;
+  border-radius: @border-radius-base;
+}
+
+.dlm .list-group-item {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dlm .logo {
+  font-size: 48px;
+  width: 48px;
+}
+
+.dlm a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#windows {
+  background-color: #93a7ac;
+}
+
+#mac {
+  background-color: #93ac93;
+}
+
+#linux {
+  background-color: #ac9d93;
+}
+
+#others {
+  background-color: #ac93a7;
+}
+
+#development {
+  background-color: #aca793;
+}
+
+#sourcecode {
+  background-color: @gray;
 }

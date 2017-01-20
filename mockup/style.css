@@ -6606,7 +6606,7 @@ body {
 }
 .section {
   position: relative;
-  padding: 64px 0;
+  padding: 48px 0;
 }
 .section .background-image {
   z-index: 0;
@@ -6776,6 +6776,9 @@ body {
 .cover .cover-image.cover-image-fixed {
   background-attachment: fixed;
 }
+.media {
+  padding-bottom: 16px;
+}
 #footer-navigation {
   background: #082532;
   padding: 15px 0;
@@ -6869,4 +6872,39 @@ span.navbar-label {
 .card:hover {
   transition: 0.2s;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+}
+.dlm {
+  padding: 12px;
+  color: #fff;
+  border-radius: 3px;
+}
+.dlm .list-group-item {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.dlm .logo {
+  font-size: 48px;
+  width: 48px;
+}
+.dlm a {
+  color: #fff;
+  text-decoration: underline;
+}
+#windows {
+  background-color: #93a7ac;
+}
+#mac {
+  background-color: #93ac93;
+}
+#linux {
+  background-color: #ac9d93;
+}
+#others {
+  background-color: #ac93a7;
+}
+#development {
+  background-color: #aca793;
+}
+#sourcecode {
+  background-color: #aaaaab;
 }
