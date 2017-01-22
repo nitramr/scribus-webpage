@@ -6884,10 +6884,6 @@ span.navbar-label {
   color: #fff;
   border-radius: 3px;
 }
-.dlm .list-group-item {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.2);
-}
 .dlm .logo {
   font-size: 48px;
   width: 48px;
@@ -6895,6 +6891,16 @@ span.navbar-label {
 .dlm a {
   color: #fff;
   text-decoration: underline;
+}
+a.list-group-item-dlm {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+a.list-group-item-dlm:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 #windows {
   background-color: #93a7ac;
