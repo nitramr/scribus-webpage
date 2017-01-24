@@ -13,7 +13,6 @@
  *   box-shadow : 0px 0px 10px black !important;
  * }
 */
-
 //
 // Variables
 // --------------------------------------------------
@@ -21,21 +20,21 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 @gray-base : #343539;
-@gray-darker : #72737b;
-@gray-dark : #97979c;
-@gray : #aaaaab;
-@gray-light : #e8e8ea;
-@gray-lighter : #f0f0f0;
-@brand-primary : rgb(48, 100, 160);
+@gray-darker : lighten(@gray-base, 18%); //#72737b;
+@gray-dark : lighten(@gray-base, 36%); //#97979c;
+@gray : lighten(@gray-base, 50%); //#aaaaab;
+@gray-light : lighten(@gray-base, 68%); //#e8e8ea;
+@gray-lighter : lighten(@gray-base, 75%); //#f0f0f0;
+@scribus-yellow : #fec700;
+@scribus-light : rgb(40, 166, 222);
+@scribus-dark : rgb(48, 100, 160);
+@scribus-darker : rgb(5, 25, 32);
+@brand-primary : @scribus-light;
 @brand-success : #5cb85c;
-@brand-info : rgb(40, 166, 222);
-@brand-warning : #f0ad4e;
+@brand-info : @scribus-light;
+@brand-warning : @scribus-yellow; //#f0ad4e;
 @brand-danger : #d9534f;
 @black-transparent : rgba(0, 0, 0, 0.3);
-@scribus-light : @brand-info;
-@scribus-lighter : rgb(193, 227, 242);
-@scribus-dark : @brand-primary;
-@scribus-darker : rgb(5, 25, 32);
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -98,19 +97,19 @@ monospace;
 //== Components
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
-@padding-base-vertical : 6px;
-@padding-base-horizontal : 12px;
-@padding-large-vertical : 10px;
+@padding-base-vertical : 8px;
+@padding-base-horizontal : 16px;
+@padding-large-vertical : 8px;
 @padding-large-horizontal : 16px;
-@padding-small-vertical : 5px;
-@padding-small-horizontal : 10px;
+@padding-small-vertical : 4px;
+@padding-small-horizontal : 8px;
 @padding-xs-vertical : 1px;
-@padding-xs-horizontal : 5px;
+@padding-xs-horizontal : 4px;
 @line-height-large : 1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small : 1.5;
-@border-radius-base : 3px;
-@border-radius-large : 6px;
-@border-radius-small : 3px;
+@border-radius-base : 2px;
+@border-radius-large : 4px;
+@border-radius-small : 2px;
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color : contrast(@component-active-bg, @text-color, @text-inverse, 43%);
 //** Global background color for active items (e.g., navs or dropdowns).
@@ -736,6 +735,7 @@ monospace;
 @import "https://raw.githubusercontent.com/twbs/bootstrap/v3.3.4/less/utilities.less";
 @import "https://raw.githubusercontent.com/twbs/bootstrap/v3.3.4/less/responsive-utilities.less";
 @import "https://raw.githubusercontent.com/Pingendo/pingendo-bootstrap/gh-pages/less/pingendo-custom.less";
+// tmp Style
 //== Custom Styles
 // Pingendo variables
 @section-spacing : 48px;
@@ -774,42 +774,93 @@ a {
   text-decoration: none;
 }
 
-.text-white {
-  color: #fff!important;
+//== Colors
+.bg-scribus-light {
+  background-color: @scribus-light;
 }
 
-.text-gray-light {
-  color: @gray-light;
+.text-scribus-light {
+  color: @scribus-light;
 }
 
-//== background
-.bg-gray-lighter {
-  background-color: @gray-lighter;
+.bg-scribus-dark {
+  background-color: @scribus-dark;
+}
+
+.text-scribus-dark {
+  color: @scribus-dark;
+}
+
+.bg-scribus-darker {
+  background-color: @scribus-darker;
+}
+
+.text-scribus-darker {
+  color: @scribus-darker;
+}
+
+.bg-scribus-yellow {
+  background-color: @scribus-yellow;
+}
+
+.text-scribus-yellow {
+  color: @scribus-yellow;
 }
 
 .bg-white {
   background-color: #fff;
 }
 
-.bg-blue1 {
-  background-color: @brand-info;
+.text-white {
+  color: #fff!important;
+}
+
+.bg-gray-light {
+  background-color: @gray-light;
+}
+
+.text-gray-light {
+  color: @gray-light;
+}
+
+.bg-gray-lighter {
+  background-color: @gray-lighter;
+}
+
+.text-gray-lighter {
+  color: @gray-lighter;
+}
+
+.bg-gray {
+  background-color: @gray;
+}
+
+.text-gray {
+  color: @gray;
+}
+
+.bg-gray-dark {
+  background-color: @gray-dark;
+}
+
+.text-gray-dark {
+  color: @gray-dark;
+}
+
+.bg-gray-darker {
+  background-color: @gray-darker;
+}
+
+.text-gray-darker {
+  color: @gray-darker;
 }
 
 .bg-gray-base {
   background-color: @gray-base;
 }
 
-.background-pattern {
-  z-index: 0;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background-position: left top;
-  background-repeat: repeat, no-repeat;
-  &.background-image-fixed {
-    background-attachment: fixed;
-  }
+.text-gray-base {
+  color: @gray-base;
 }
 
 // == effects
@@ -874,12 +925,6 @@ span.navbar-label {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
-//== card
-.card:hover {
-  transition: 0.2s;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
-}
-
 //== dlm card
 .dlm {
   padding: @padding-base-horizontal;
@@ -931,4 +976,120 @@ a.list-group-item-dlm:hover {
 
 #sourcecode {
   background-color: @gray;
+}
+
+
+/***********
+
+Card
+
+
+************/
+
+.card {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 2px;
+    -webkit-font-smoothing: antialiased;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    margin-bottom:16px;
+}
+
+.card > img,
+.card a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.card .card-content {
+    padding: 16px;
+    position: relative;
+}
+
+.card .card-actions {
+    border-top: 1px solid #e8e8e8;
+    padding: 8px;
+    position: relative;
+}
+
+.card .btn {
+    text-transform: uppercase;
+    padding: 6px 8px;
+}
+
+.card h3 {
+    margin: 8px 0px 12px 0px;
+    padding:0px;
+    line-height: 1.25em;
+}
+
+.card:hover {
+  .card-4;
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-4 {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+// ripple effects
+.ripple, .btn {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10,10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+  }
+
+  &:active:after {
+    transform: scale(0,0);
+    opacity: .2;
+    transition: 0s;
+  }
+}
+
+/*******************************
+
+  StyleGuide
+
+*******************************/
+
+.panel-color {
+  .card;
+}
+
+.panel-color .panel-heading {
+  height: 80px;
+}
+
+.panel-color .panel-heading p {
+  margin-top: 30px;
 }
