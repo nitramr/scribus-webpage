@@ -13,6 +13,7 @@
  *   box-shadow : 0px 0px 10px black !important;
  * }
 */
+
 //
 // Variables
 // --------------------------------------------------
@@ -67,13 +68,13 @@ Consolas,
 monospace;
 @font-family-base : "Roboto";
 @font-family-weight : 400;
-@font-size-base : 14px;
-@font-size-large : ceil((@font-size-base * 1.25)); // ~18px
+@font-size-base : 16px;
+@font-size-large : ceil((@font-size-base * 1.333)); // ~18px
 @font-size-small : ceil((@font-size-base * 0.85)); // ~12px
-@font-size-h1 : floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2 : floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3 : ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4 : ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h1 : floor((@font-size-base * 3.157)); // ~36px
+@font-size-h2 : floor((@font-size-base * 2.369)); // ~30px
+@font-size-h3 : ceil((@font-size-base * 1.55)); //ceil((@font-size-base * 1.777)); // ~24px
+@font-size-h4 : ceil((@font-size-base * 1.333)); // ~18px
 @font-size-h5 : @font-size-base;
 @font-size-h6 : ceil((@font-size-base * 0.85)); // ~12px
 //** Unit-less `line-height` for use in components like buttons.
@@ -869,8 +870,13 @@ a {
 }
 
 .img-shadow {
-  -webkit-filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
-  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.img-border {
+  border: 3px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 //== spacer elements
@@ -917,65 +923,12 @@ a {
 
 span.navbar-label {
   vertical-align: middle;
-  font-size: 1.2em;
+  font-size: 1em;
   padding-left: 8px;
 }
 
 .navbar-default {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-}
-
-//== dlm card
-.dlm {
-  padding: @padding-base-horizontal;
-  color: #fff;
-  border-radius: @border-radius-base;
-}
-
-.dlm .logo {
-  font-size: 48px;
-  width: 48px;
-}
-
-.dlm a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-a.list-group-item-dlm {
-  color: #fff;
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
-a.list-group-item-dlm:hover {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-#windows {
-  background-color: #93a7ac;
-}
-
-#mac {
-  background-color: #93ac93;
-}
-
-#linux {
-  background-color: #ac9d93;
-}
-
-#others {
-  background-color: #ac93a7;
-}
-
-#development {
-  background-color: #aca793;
-}
-
-#sourcecode {
-  background-color: @gray;
 }
 
 
@@ -987,47 +940,48 @@ Card
 ************/
 
 .card {
-    display: block;
-    position: relative;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    border-radius: 2px;
-    -webkit-font-smoothing: antialiased;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    margin-bottom:16px;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 2px;
+  -webkit-font-smoothing: antialiased;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  margin-bottom: 16px;
 }
 
 .card > img,
 .card a > img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .card .card-content {
-    padding: 16px;
-    position: relative;
+  padding: 16px;
+  position: relative;
 }
 
 .card .card-actions {
-    border-top: 1px solid #e8e8e8;
-    padding: 8px;
-    position: relative;
+  border-top: 1px solid #e8e8e8;
+  padding: 8px;
+  position: relative;
 }
 
 .card .btn {
-    text-transform: uppercase;
-    padding: 6px 8px;
+  text-transform: uppercase;
+  padding: 6px 8px;
 }
 
 .card h3 {
-    margin: 8px 0px 12px 0px;
-    padding:0px;
-    line-height: 1.25em;
+  margin: 8px 0px 12px 0px;
+  padding: 0px;
+  line-height: 1.25em;
 }
 
-.card:hover {
+.card.hover:hover,
+.card-hover:hover {
   .card-4;
 }
 
@@ -1047,11 +1001,33 @@ Card
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
+//== dlm card
+.dlm {
+  color: lighten(@scribus-darker, 10%);
+}
+
+.dlm .logo {
+  font-size: 48px;
+  width: 48px;
+}
+
+a.list-group-item-dlm {
+  color: @scribus-light;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+a.list-group-item-dlm:hover {
+  color: @scribus-light;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 // ripple effects
-.ripple, .btn {
+.ripple,
+.btn {
   position: relative;
   overflow: hidden;
-
   &:after {
     content: "";
     display: block;
@@ -1064,17 +1040,17 @@ Card
     background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
     background-repeat: no-repeat;
     background-position: 50%;
-    transform: scale(10,10);
+    transform: scale(10, 10);
     opacity: 0;
     transition: transform .5s, opacity 1s;
   }
-
   &:active:after {
-    transform: scale(0,0);
+    transform: scale(0, 0);
     opacity: .2;
     transition: 0s;
   }
 }
+
 
 /*******************************
 
