@@ -6972,6 +6972,25 @@ Card
 .card-5 {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
+.card-sponsor {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 2px;
+  -webkit-font-smoothing: antialiased;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 16px;
+  padding: 8px;
+}
+.card-sponsor:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.card-sponsor img {
+  margin: 0px auto;
+  /*  filter: grayscale(100%);*/
+}
 .dlm {
   color: #0c3b4c;
 }
