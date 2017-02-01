@@ -6982,13 +6982,19 @@ Card
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   margin-bottom: 16px;
+  margin-bottom: 0px;
   padding: 8px;
+  height: 60px;
+  display: inline-block;
 }
 .card-sponsor:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: hand;
 }
 .card-sponsor img {
   margin: 0px auto;
+  height: 44px;
+  width: auto;
   /*  filter: grayscale(100%);*/
 }
 .dlm {
