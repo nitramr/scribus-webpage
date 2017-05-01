@@ -29,7 +29,7 @@
 @scribus-yellow : #fec700;
 @scribus-light : rgb(40, 166, 222);
 @scribus-dark : rgb(48, 100, 160);
-@scribus-darker : rgb(5, 25, 32);
+@scribus-darker : darken(@scribus-light, 40%); //rgb(5, 25, 32);
 @brand-primary : @scribus-light;
 @brand-success : #5cb85c;
 @brand-info : @scribus-light;
@@ -40,7 +40,7 @@
 //
 //## Settings for some of the most global styles.
 //** Background color for `<body>`.
-@body-bg : @gray-lighter;
+@body-bg : @gray-light;
 //** Global text color on `<body>`.
 @text-color : @gray-base;
 //** Global textual link color.
@@ -749,7 +749,7 @@ monospace;
 //== Container
 // footer
 #footer-navigation {
-  background: darken(@scribus-light, 40%);
+  background: @scribus-darker; //darken(@scribus-light, 40%);
   padding: 15px 0;
   font-size: 85%;
   color: @gray;
@@ -1090,4 +1090,25 @@ a.list-group-item-dlm:hover {
 
 .panel-color .panel-heading p {
   margin-top: 30px;
+}
+
+body {
+  background-image: linear-gradient(to right, lighten(@scribus-dark, 50%) 0%, lighten(@scribus-dark, 55%) 100%);
+}
+
+.bg-gradient-blue {
+  /*background: lighten(@scribus-dark,30%);
+  background: -moz-linear-gradient(top, lighten(@scribus-dark,30%) 0%, lighten(@scribus-light,30%) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, lighten(@scribus-dark,30%)), color-stop(100%, lighten(@scribus-light,30%)));
+  background: -webkit-linear-gradient(top, lighten(@scribus-dark,30%) 0%, lighten(@scribus-light,30%) 100%);
+  background: -o-linear-gradient(top, lighten(@scribus-dark,30%) 0%, lighten(@scribus-light,30%) 100%);
+  background: -ms-linear-gradient(top, lighten(@scribus-dark,30%) 0%, lighten(@scribus-light,30%) 100%);*/
+  // background: linear-gradient(to bottom, lighten(@scribus-dark,35%) 0%, lighten(@scribus-light,35%) 100%);
+  background: linear-gradient(to bottom, desaturate(lighten(@scribus-dark, 40%), 20%) 0%, desaturate(lighten(@scribus-light, 40%), 20%) 100%);
+  //background-image: linear-gradient(to top, lighten(@scribus-dark,50%) 0%, lighten(@scribus-dark,55%) 100%);
+}
+
+.bg-gradient-blackblue {
+  background: @gray-base;
+  background: linear-gradient(to right, darken(@gray, 35%) 0%, desaturate(darken(@scribus-light, 15%), 50%) 100%);
 }
