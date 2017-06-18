@@ -40,7 +40,7 @@
 //
 //## Settings for some of the most global styles.
 //** Background color for `<body>`.
-@body-bg : lighten(@scribus-dark, 54%);
+@body-bg : @gray-lighter; //lighten(@scribus-dark, 54%);
 //** Global text color on `<body>`.
 @text-color : @gray-base;
 //** Global textual link color.
@@ -889,6 +889,10 @@ a {
   height: 100%;
 }
 
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 // == effects
 .text-shadow {
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
@@ -1061,13 +1065,13 @@ Card
 a.list-group-item-dlm {
   color: @scribus-light;
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: lighten(@scribus-dark, 54%); //rgba(0, 0, 0, 0.05);
   border-color: rgba(0, 0, 0, 0.1);
 }
 
 a.list-group-item-dlm:hover {
   color: @scribus-light;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: lighten(@scribus-dark, 52%); //rgba(0, 0, 0, 0.1);
 }
 
 // ripple effects
